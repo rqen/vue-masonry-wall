@@ -1,5 +1,5 @@
 {
-  "name": "@yeger/vue-masonry-wall",
+  "name": "@rqen/vue-masonry-wall",
   "version": "3.0.44",
   "description": "Responsive masonry layout with SSR support and zero dependencies for Vue 3.",
   "author": {
@@ -8,9 +8,9 @@
   },
   "license": "MIT",
   "homepage": "https://vue-masonry-wall.yeger.eu",
-  "repository": "github:DerYeger/vue-masonry-wall",
+  "repository": "github:rqen/vue-masonry-wall",
   "bugs": {
-    "url": "https://github.com/DerYeger/vue-masonry-wall/issues"
+    "url": "https://github.com/rqen/vue-masonry-wall/issues"
   },
   "keywords": [
     "vue",
