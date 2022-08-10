@@ -50,6 +50,13 @@ if (ssrColumns.value > 0) {
   columns.value = newColumns
 }
 
+onMounted(() => {
+  redraw()
+  resizeObserver?.observe(wall.value)
+})
+
+onBeforeUnmount(() => resizeObserver?.unobserve(wall.value))
+
 async function fillColumns(itemIndex: number) {
   if (itemIndex >= items.value.length) {
     return
@@ -84,13 +91,6 @@ const resizeObserver =
   typeof ResizeObserver === 'undefined'
     ? undefined
     : new ResizeObserver(() => redraw())
-
-onMounted(() => {
-  redraw()
-  resizeObserver?.observe(wall.value)
-})
-
-onBeforeUnmount(() => resizeObserver?.unobserve(wall.value))
 
 watch([items, rtl], () => redraw(true))
 watch([columnWidth, gap], () => redraw())
