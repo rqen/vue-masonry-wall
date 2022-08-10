@@ -10,7 +10,8 @@ const props = withDefaults(
     items: unknown[]
     gap?: number
     rtl?: boolean
-    ssrColumns?: number
+    ssrColumns?: number,
+    itemClass?: string,
   }>(),
   {
     columnWidth: 400,
@@ -115,7 +116,7 @@ watch([columnWidth, gap], () => redraw())
         gap: `${gap}px`,
       }"
     >
-      <div v-for="itemIndex in column" :key="itemIndex" class="masonry-item">
+      <div v-for="itemIndex in column" :key="itemIndex" class="masonry-item" :class="itemClass">
         <slot :item="items[itemIndex]" :index="itemIndex">
           {{ items[itemIndex] }}
         </slot>
